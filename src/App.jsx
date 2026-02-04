@@ -28,17 +28,17 @@ function alphabetizeTwoWords(word1, word2) {
 
   let index = 0;
   while (index < word1.length) {
-    if (!word2[index]) return [word2, word1];
+    if (!word2[index]) return false;
 
     if (word1[index] < word2[index]) {
-      return [word1, word2];
+      return true;
     }
     if (word1[index] > word2[index]) {
-      return [word2, word1];
+      return false;
     }
     index++;
   }
-  return [word1, word2];
+  return true;
 }
 
 console.log(
