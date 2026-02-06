@@ -20,6 +20,19 @@ function App() {
 
   const [people, setPeople] = useState(peopleData);
 
+  fetch('https://catfact.ninja/fact')
+    .then((res) => {
+      console.log('response.ok', res.ok);
+      console.log('respons status', res.status);
+      return res.json();
+    })
+    .then((data) => {
+      console.log('data', data);
+    })
+    .catch((error) => {
+      console.log('error fetching fact in thenable: ', error);
+    });
+
   return (
     <div className='App'>
       <Dropdown
