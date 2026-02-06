@@ -6,12 +6,7 @@ export default function Dropdown({ people, setPeople }) {
   const [selectedAttribute, setSelectedAttribute] = useState('');
   const handleSelect = (e) => {
     setSelectedAttribute(e.target.value);
-    // console.log('target', e.target.value);
-    // console.log('selectedAttribute', selectedAttribute);
-    // console.log(
-    //   'alphabetizeList(people, selectedAttribute)',
-    //   alphabetizeList(people, e.target.value),
-    // );
+
     setPeople(alphabetizeList(people, e.target.value));
   };
 
@@ -33,12 +28,6 @@ export default function Dropdown({ people, setPeople }) {
   );
 }
 
-// let people = [
-//   { firstName: 'Emily', lastName: 'McGettrick', jobTitle: 'Tutor' },
-//   { firstName: 'Emma', lastName: 'Latimer', jobTitle: 'Project Manager' },
-//   { firstName: 'Camil', lastName: 'Mikiej', jobTitle: 'Physician Assistant' },
-//   { firstName: 'Abner', lastName: 'Jacobsen', jobTitle: 'Graphic Designer' },
-// ];
 
 //arr is an object array
 //returns object array sorted alphabetically by feature property
@@ -55,18 +44,14 @@ function alphabetizeList(arr, attribute) {
 
   // }
   while (copy.length != 0) {
-    // console.log('entering while loop');
-    // console.log('result.length', result.length);
     current = copy.pop();
     for (let i = 0; i <= result.length; i++) {
-    //   console.log('result[i]', result[i]);
       if (!result[i]) {
         result.push(current);
         break;
       }
       if (alphabetizeTwoWords(current[attribute], result[i][attribute])) {
         result.splice(i, 0, current);
-        // console.log('result when i = ', i, '--->', result);
         break;
       }
     }
@@ -94,8 +79,3 @@ function alphabetizeTwoWords(word1, word2) {
   }
   return true;
 }
-// console.log('below');
-// console.log('alphabetizelist', alphabetizeList(people, 'lastName'));
-// console.log(
-//   alphabetizeList([{ name: 'Zoe' }, { name: 'Mia' }, { name: 'Anna' }], 'name'),
-// );
