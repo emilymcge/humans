@@ -4,30 +4,50 @@ import { useState } from 'react';
 
 export default function Dropdown({ people, setPeople }) {
   const [selectedAttribute, setSelectedAttribute] = useState('');
+  const handleSelect = (e) => {
+    setSelectedAttribute(e.target.value);
+    // console.log('target', e.target.value);
+    // console.log('selectedAttribute', selectedAttribute);
+    // console.log(
+    //   'alphabetizeList(people, selectedAttribute)',
+    //   alphabetizeList(people, e.target.value),
+    // );
+    setPeople(alphabetizeList(people, e.target.value));
+  };
+
   return (
     <>
       <label>Sort By</label>
-      <select name='selectedAttribute'>
-        <option>First Name</option>
-        <option>Last Name</option>
-        <option>Job</option>
+      <select
+        name='selectedAttribute'
+        value={selectedAttribute}
+        onChange={(e) => {
+          handleSelect(e);
+        }}
+      >
+        <option value='firstName'>First Name</option>
+        <option value='lastName'>Last Name</option>
+        <option value='jobTitle'>Job</option>
       </select>
     </>
   );
 }
 
-let people = [
-  { firstName: 'Emily', lastName: 'McGettrick', jobTitle: 'Tutor' },
-  { firstName: 'Emma', lastName: 'Latimer', jobTitle: 'Project Manager' },
-  { firstName: 'Camil', lastName: 'Mikiej', jobTitle: 'Physician Assistant' },
-  { firstName: 'Abner', lastName: 'Jacobsen', jobTitle: 'Graphic Designer' },
-];
+// let people = [
+//   { firstName: 'Emily', lastName: 'McGettrick', jobTitle: 'Tutor' },
+//   { firstName: 'Emma', lastName: 'Latimer', jobTitle: 'Project Manager' },
+//   { firstName: 'Camil', lastName: 'Mikiej', jobTitle: 'Physician Assistant' },
+//   { firstName: 'Abner', lastName: 'Jacobsen', jobTitle: 'Graphic Designer' },
+// ];
 
 //arr is an object array
 //returns object array sorted alphabetically by feature property
 function alphabetizeList(arr, attribute) {
-  if (attribute.length == 0) return arr;
-  console.log('hi');
+  //console.log('hi');
+  if (attribute.length == 0) {
+    return arr;
+  }
+
   if (!arr) return [];
   const copy = [...arr];
   let result = [copy.pop()];
@@ -35,18 +55,18 @@ function alphabetizeList(arr, attribute) {
 
   // }
   while (copy.length != 0) {
-    console.log('entering while loop');
-    console.log('result.length', result.length);
+    // console.log('entering while loop');
+    // console.log('result.length', result.length);
     current = copy.pop();
     for (let i = 0; i <= result.length; i++) {
-      console.log('result[i]', result[i]);
+    //   console.log('result[i]', result[i]);
       if (!result[i]) {
         result.push(current);
         break;
       }
       if (alphabetizeTwoWords(current[attribute], result[i][attribute])) {
         result.splice(i, 0, current);
-        console.log('result when i = ', i, '--->', result);
+        // console.log('result when i = ', i, '--->', result);
         break;
       }
     }
@@ -74,8 +94,8 @@ function alphabetizeTwoWords(word1, word2) {
   }
   return true;
 }
-console.log('below');
-console.log('alphabetizelist', alphabetizeList(people, 'lastName'));
-console.log(
-  alphabetizeList([{ name: 'Zoe' }, { name: 'Mia' }, { name: 'Anna' }], 'name'),
-);
+// console.log('below');
+// console.log('alphabetizelist', alphabetizeList(people, 'lastName'));
+// console.log(
+//   alphabetizeList([{ name: 'Zoe' }, { name: 'Mia' }, { name: 'Anna' }], 'name'),
+// );
