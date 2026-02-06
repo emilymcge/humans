@@ -5,12 +5,6 @@ import List from './components/List.jsx';
 import './App.css';
 
 function App() {
-  // const [clicked, setClicked] = useState(false);
-
-  // const handleClick = () => {
-  //   setClicked(!clicked);
-  // };
-
   let peopleData = [
     { firstName: 'Emily', lastName: 'McGettrick', jobTitle: 'Tutor' },
     { firstName: 'Emma', lastName: 'Latimer', jobTitle: 'Project Manager' },
@@ -19,8 +13,8 @@ function App() {
   ];
 
   const [people, setPeople] = useState(peopleData);
-
   const [catFact, setCatFact] = useState('');
+
   const handleClick = (e) => {
     fetch('https://catfact.ninja/fact')
       .then((res) => {
@@ -43,9 +37,14 @@ function App() {
         people={people}
         setPeople={setPeople}
       />
-      <List people={people} />
-      <button onClick={handleClick}>Click for a cat fact</button>
-      <span>{catFact}</span>
+      <List
+        people={people}
+        className='list'
+      />
+      <div className='cat-fact-box'>
+        <button onClick={handleClick}>Click for a cat fact</button>
+        <span className='cat-fact'>{catFact}</span>
+      </div>
     </div>
   );
 }

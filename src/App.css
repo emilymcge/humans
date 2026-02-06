@@ -44,16 +44,61 @@
 .App {
   display: flex;
   flex-direction: column;
+  width: 350px;
 }
 
 .list {
   display: flex;
   flex-direction: column;
   margin-bottom: 5px;
+  border: 3px solid rgb(113, 131, 244);
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f6e7;
 }
 
 .list-Item {
   margin: 2px;
   padding: 10px;
-  background-color: #e9eff1;
+  background-color: #c0e8f5;
+  border-radius: 3px;
+}
+
+.dropdown {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sort-by-label {
+  padding-right: 5px;
+}
+
+.selected-attribute {
+  padding: 2px;
+}
+
+button {
+  align-self: center;
+  padding-bottom: 10px;
+  background-color: rgb(204, 181, 254);
+  border: 2px solid rgb(124, 6, 242);
+}
+
+.cat-fact-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: rgb(247, 211, 251);
+  padding: 10px;
+  height: 150px;
+  border: 3px solid rgb(235, 113, 244);
+  border-radius: 5px;
+}
+
+.cat-fact {
+  padding-top: 10px;
+  height: 100px;
+  overflow-y: auto;
 }

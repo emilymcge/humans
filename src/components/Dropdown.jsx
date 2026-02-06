@@ -11,9 +11,10 @@ export default function Dropdown({ people, setPeople }) {
   };
 
   return (
-    <>
-      <label>Sort By</label>
+    <div className='dropdown'>
+      <label className='sort-by-label'>Sort By</label>
       <select
+        className='selected-attribute'
         name='selectedAttribute'
         value={selectedAttribute}
         onChange={(e) => {
@@ -25,7 +26,7 @@ export default function Dropdown({ people, setPeople }) {
         <option value='lastName'>Last Name</option>
         <option value='jobTitle'>Job</option>
       </select>
-    </>
+    </div>
   );
 }
 
