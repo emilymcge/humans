@@ -20,18 +20,22 @@ function App() {
 
   const [people, setPeople] = useState(peopleData);
 
-  fetch('https://catfact.ninja/fact')
-    .then((res) => {
-      console.log('response.ok', res.ok);
-      console.log('respons status', res.status);
-      return res.json();
-    })
-    .then((data) => {
-      console.log('data', data);
-    })
-    .catch((error) => {
-      console.log('error fetching fact in thenable: ', error);
-    });
+  const [catFact, setCatFact] = useState('');
+  const handleClick = (e) => {
+    fetch('https://catfact.ninja/fact')
+      .then((res) => {
+        console.log('response.ok', res.ok);
+        console.log('respons status', res.status);
+        return res.json();
+      })
+      .then((data) => {
+        console.log('data', data);
+        setCatFact(data.fact);
+      })
+      .catch((error) => {
+        console.log('error fetching fact in thenable: ', error);
+      });
+  };
 
   return (
     <div className='App'>
@@ -40,7 +44,8 @@ function App() {
         setPeople={setPeople}
       />
       <List people={people} />
-      {/* <button onClick={handleClick}>{clicked.toString()}</button> */}
+      <button onClick={handleClick}>Click for a cat fact</button>
+      <span>{catFact}</span>
     </div>
   );
 }
