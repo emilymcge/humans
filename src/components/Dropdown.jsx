@@ -20,6 +20,7 @@ export default function Dropdown({ people, setPeople }) {
           handleSelect(e);
         }}
       >
+        <option value=''>select</option>
         <option value='firstName'>First Name</option>
         <option value='lastName'>Last Name</option>
         <option value='jobTitle'>Job</option>
