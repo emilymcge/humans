@@ -28,21 +28,18 @@ export default function Dropdown({ people, setPeople }) {
   );
 }
 
-
 //arr is an object array
 //returns object array sorted alphabetically by feature property
 function alphabetizeList(arr, attribute) {
-  //console.log('hi');
   if (attribute.length == 0) {
     return arr;
   }
-
   if (!arr) return [];
   const copy = [...arr];
   let result = [copy.pop()];
   let current = '';
 
-  // }
+  if (!result[attribute]) return arr;
   while (copy.length != 0) {
     current = copy.pop();
     for (let i = 0; i <= result.length; i++) {
