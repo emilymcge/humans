@@ -39,7 +39,7 @@ function alphabetizeList(arr, attribute) {
   let result = [copy.pop()];
   let current = '';
 
-  if (!result[attribute]) return arr;
+  if (!result[0]?.[attribute]) return arr;
   while (copy.length != 0) {
     current = copy.pop();
     for (let i = 0; i <= result.length; i++) {
