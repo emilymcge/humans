@@ -22,8 +22,11 @@ function App() {
 
   return (
     <div className='App'>
-      <Dropdown people={peopleData} setPeople={setPeople} />
-      <List people={peopleData} />
+      <Dropdown
+        people={people}
+        setPeople={setPeople}
+      />
+      <List people={people} />
       {/* <button onClick={handleClick}>{clicked.toString()}</button> */}
     </div>
   );
