@@ -13,7 +13,7 @@ function App() {
   ];
 
   const [people, setPeople] = useState(peopleData);
-  const [catFact, setCatFact] = useState('');
+  const [catFact, setCatFact] = useState(false);
 
   const handleClick = (e) => {
     fetch('https://catfact.ninja/fact')
@@ -31,6 +31,11 @@ function App() {
       });
   };
 
+  const handleClick2 = async (e) => {
+    const res = await fetch('https://catfact.ninja/fact');
+    const data = await res.json;
+  };
+
   return (
     <div className='App'>
       <Dropdown
@@ -43,8 +48,9 @@ function App() {
       />
       <div className='cat-fact-box'>
         <button onClick={handleClick}>Click for a cat fact</button>
-        <span className='cat-fact'>{catFact}</span>
+        <span className='cat-fact'>{catFact && <>{catFact}</>}</span>
       </div>
+      
     </div>
   );
 }

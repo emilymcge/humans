@@ -55,13 +55,12 @@
   border-radius: 5px;
   padding: 10px;
   background-color: #f9f6e7;
-}
-
-.list-Item {
-  margin: 2px;
-  padding: 10px;
-  background-color: #c0e8f5;
-  border-radius: 3px;
+  .list-Item {
+    margin: 2px;
+    padding: 10px;
+    background-color: #c0e8f5;
+    border-radius: 3px;
+  }
 }
 
 .dropdown {

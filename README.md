@@ -1,16 +1,63 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+##Assignment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+install chakra ui, tailwind
+]
+client //package.json
+server //package.json
 
-## Expanding the ESLint configuration
+deploy
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##server structure
+server
+server/index.js //serverfile
+server/src / client
+server/dist/ //react builds here
+server/ package.json //npm run
+vite
+
+##next assignment
+
+front end
+install chakra ui
+install react-router
+build form to do CRUD
+
+
+#Backend - first
+use postman 
+CRUD  
+use node/express, create routes for CRUD for people
+mongodb
+use REST endpoints 
+
+Created
+POST bbody{ name:"bob"...} 
+/people
+
+READ
+GET - /people ///list of all the people
+GET - /people/:id //that get that one person
+
+DELETE
+DELETE - /people/:id
+
+Update
+PUT - /people/:id
+
+
+paramater
+Is the word in the url ":"
+query
+Is the string with a question mark google.com?search=cat
+
+
+FUTURE
+//login //encryption
+//next.js
+//img upload //find service
+//javascript
+//sort, 
