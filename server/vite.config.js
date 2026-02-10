@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   root: './src',
   build: {
-    outDir: '../dist',
+    outDir: '../dist', //!I used chatGPT for this i dont rly understand it
     emptyOutDir: true,
   },
   plugins: [react()],
