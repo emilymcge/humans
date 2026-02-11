@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Dropdown from './components/Dropdown.jsx';
 import List from './components/List.jsx';
+import Form from './components/Form.jsx';
 import './App.css';
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
         <button onClick={handleClick}>Click for a cat fact</button>
         <span className='cat-fact'>{catFact && <>{catFact}</>}</span>
       </div>
-      
+      <Form />
     </div>
   );
 }
