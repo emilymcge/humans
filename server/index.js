@@ -3,7 +3,7 @@ import express from 'express';
 
 const app = express();
 
-app.get('/api', (req, res) => {});
-app.post('/api', (req, res) => {});
-app.patch('/api', (req, res) => {});
-app.delete('/api', (req, res) => {});
+app.get('/humans', (req, res) => {});
+app.post('/humans', (req, res) => {});
+app.patch('/humans', (req, res) => {});
+app.delete('/humans', (req, res) => {});
